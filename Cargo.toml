@@ -1,12 +1,15 @@
+workspace = { members = ["ruce-macro"] }
 [package]
 name = "ruce"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+crate-type = ["staticlib"]
 
 [dependencies]
 quote = "1.0.35"
+ruce-macro = { path = "./ruce-macro" }
 
 [build-dependencies]
 quote = "1.0.35"
