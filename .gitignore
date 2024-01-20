@@ -1,1 +1,6 @@
 /target
+libruce.a
+main.html
+main.js
+main.wasm
+output.c
