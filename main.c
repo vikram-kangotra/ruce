@@ -1,7 +1,7 @@
-extern void console_log();
+extern void run();
 
 int main() {
-  console_log();
+  run();
 
   return 0;
 }
