@@ -1,9 +1,8 @@
 use ruce_macro::js_code;
 
 #[js_code]
-fn console_log() { 
-    console.log("Hello, world 1!"); 
-    console.log("Hello, world 2!"); 
+fn console_log(x: i32) { 
+    console.log(x);
 }
 
 #[js_code]
@@ -15,7 +14,7 @@ fn alert() {
 fn run() {
 
     for _ in 0..10 {
-        console_log();
+        console_log(10);
     }
 
     alert();
