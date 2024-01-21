@@ -8,9 +8,4 @@ edition = "2021"
 crate-type = ["staticlib"]
 
 [dependencies]
-quote = "1.0.35"
 ruce-macro = { path = "./ruce-macro" }
-
-[build-dependencies]
-quote = "1.0.35"
-syn = { version = "2.0.48", features = ["full"] }

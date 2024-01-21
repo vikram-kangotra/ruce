@@ -24,9 +24,7 @@ dependencies = [
 name = "ruce"
 version = "0.1.0"
 dependencies = [
- "quote",
  "ruce-macro",
- "syn",
 ]
 
 [[package]]

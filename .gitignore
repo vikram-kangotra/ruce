@@ -3,4 +3,4 @@ libruce.a
 main.html
 main.js
 main.wasm
-output.c
+js_code.c
