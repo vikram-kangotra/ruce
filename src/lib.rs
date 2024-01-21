@@ -1,21 +1,15 @@
-use ruce_macro::js_code;
+use ruce_macro::js_function;
 
-#[js_code]
+#[js_function]
 fn console_log(x: i32) { 
-    console.log(x);
 }
 
-#[js_code]
+#[js_function]
 fn alert() { 
-    alert("Success!"); 
 }
 
 #[no_mangle]
 fn run() {
-
-    for _ in 0..10 {
-        console_log(10);
-    }
 
     alert();
 }

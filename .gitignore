@@ -1,6 +1,5 @@
 /target
+/ruce_out
 libruce.a
-main.html
 main.js
 main.wasm
-js_code.c
