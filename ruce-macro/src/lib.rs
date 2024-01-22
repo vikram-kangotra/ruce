@@ -29,10 +29,14 @@ pub fn js_function(_attr: TokenStream, input: TokenStream) -> TokenStream {
 
     let input = parse_macro_input!(input as ItemFn); 
 
+    let input = quote! { #input };
+
+    let input: TokenStream = input.into();
+    let input = parse_macro_input!(input as ItemFn);
+
     let function_name = &input.sig.ident;
     let function_name_at_c = unique_function!(function_name);
     let function_name_at_c = Ident::new(&function_name_at_c, input.span());
-
     let block = &input.block.stmts;
 
     let args = &input.sig.inputs.iter().collect::<Vec<_>>();
@@ -53,7 +57,8 @@ pub fn js_function(_attr: TokenStream, input: TokenStream) -> TokenStream {
         };
 
         let pat = &arg.pat;
-        let ty = &arg.ty.span().source_text().unwrap();
+        let ty = &arg.ty;
+        let ty = quote! { #ty }.to_string();
 
         let c_type = match ty.as_str() {
             "i32" => quote! { int },
